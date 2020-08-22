@@ -1,0 +1,79 @@
+<div>
+    <div class="row">
+        <div class="col-sm-2" style="background-color: blue; color: white">
+            <div class="row col-sm-12 ml-2" style="margin-top: 3em;">
+                <i class="fa fa-home fa-lg mt-1 mr-2" aria-hidden="true"></i> Dashboard
+                <br>
+            </div>
+            <div class="row col-sm-12 ml-2" style="margin-top: 2em;">
+                HELP
+                <ul>
+                    <li><i class="fa fa-envelope"></i> Raise a Ticket</li>
+                    <li><i class="fa fa-globe"></i> FAQs</li>
+                </ul>
+            </div>
+            <div class="row col-sm-12 ml-2" style="margin-top: 22em;">
+                SETTINGS
+                <ul>
+                    <li><i class="fa fa-user"></i> Profile</li>
+                    <li><i class="fa fa-cog"></i> Log Out</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10" style="margin-top: 3em;">
+            <div style="margin-bottom: 1em; margin-left: 1em;">
+                <h2>Welcome, <br>
+                Aishwarya Surwase</h2>
+            </div>
+            <img src="../../assets/profile_icon.jpg" alt="" width="150" height="150"
+                style="margin-bottom: 1em; margin-left: 1em;">
+            <h2 style="margin-left: 1em;">Kindly help us with the following information</h2>
+            <br>
+
+            <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="row" style="margin-left: 1em;">
+                    <div class="col-sm-4">
+                        <input type="text" name="name" placeholder="Full Name" formControlName="name"
+                            value="result.name" style="width: 250px;">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="email" name="email" placeholder="Email ID" formControlName="emailID"
+                            value="result.emailID" style="width: 250px;">
+                    </div>
+                </div>
+                <br>
+
+                <div class="row" style="margin-left: 1em;">
+                    <div class="col-sm-4">
+                        <input type="text" name="mobileno" placeholder="Mobile Number" formControlName="mobileNO"
+                            value="result.mobileNO" style="width: 250px;">
+                    </div>
+                    <div class="col-sm-4">
+                        <select name="nationality" id="nationality" formControlName="nationality" style="width: 250px;">
+                            <option value="INDIA" [selected]=true>INDIA</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row" style="margin-left: 1em;">
+                    <div class="col-sm-12">
+                        <input *ngIf="edit" type="file" name="file" value="Browse" style="border: 1px dashed black;"
+                            style="width: 500px;" (change)="handleFileInput($event.target.files)">
+                        <!-- <button type="button" (click)="downloadAddhar()">Download Aaddhar Card</button> -->
+                        <!-- <a href="http://localhost:3000/uploads/61azPnjhpScnTcNtawOdp_0A.png" class="btn clss"
+                  target="_self" download>Download</a> -->
+                    </div>
+                </div>
+                <br>
+
+                <div class="row" style="margin-left: 1em;">
+                    <div class="col-sm-8" style="text-align: center;">
+                        <button class="btn btn-primary" type="submit" style="padding: 10px 80px">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+Install the node_modules for both folder whrrl-ui and whrrl-node
+- cd folder_name
+- npm install
+
+To start for both folder
+- npm start
+
+angular will be run on 4200 port and 
+Node.js will be run on 3000 port.
+
+
+// If the setting is different please change 
+// according to the your mongodb data database
+mongoose
+    .connect("mongodb://localhost:27017/Whrrl", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then((result) => {
+        app.listen(3000, () => {
+            console.log("Server is listening at PORT 3000");
+        });
+    })
+    .catch((err) => {
+        console.log("ERROR", err);
+    });
+
+
+ 
